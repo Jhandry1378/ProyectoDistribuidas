@@ -4,7 +4,6 @@ import lombok.Data;
 
 @Data
 public class Mision {
-    private static int contadorId = 1;
 
     private Integer IdMision;
     private String Nombre;

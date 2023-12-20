@@ -4,7 +4,6 @@ import lombok.Data;
 
 @Data
 public class Tareas {
-    private static int contadorId = 1;
 
     private Integer IdTareas;
     private String Descripcion;
@@ -14,4 +13,5 @@ public class Tareas {
     public Tareas() {
         this.IdTareas = contadorId++;
     }
+
 }

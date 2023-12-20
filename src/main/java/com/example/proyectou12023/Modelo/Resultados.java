@@ -1,5 +1,8 @@
 package com.example.proyectou12023.Modelo;
 
+public class Resultados {
+
+
 import lombok.Data;
 
 @Data
@@ -13,7 +16,4 @@ public class Resultados {
 
     private String Estado;
 
-    public Resultados() {
-        this.IdResultados = contadorId++;
-    }
 }

@@ -4,6 +4,7 @@ import lombok.Data;
 
 @Data
 public class Equipo {
+
     private static int contadorId = 1;
 
     private Integer IdEquipo;

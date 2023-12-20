@@ -1,11 +1,7 @@
 package com.example.proyectou12023.Modelo;
 
-import lombok.Data;
-
-import java.util.Date;
-
-@Data
 public class Personal {
+
     private static int contadorId = 1;
 
     private Integer IdPersonal;
