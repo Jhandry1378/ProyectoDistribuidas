@@ -86,4 +86,70 @@ public class Repositorio {
         return personalEliminados;
     }
 
+    
+    //Institucion
+    public Institucion guardarInstitucion(Institucion institucion){
+        try{
+            institucionlist.add(institucion);
+            return  institucion;
+        }catch (Exception e){
+            return  new Institucion();
+        }
+    }
+    public List<Institucion> listarInstitucion() {
+        return institucionlist;
+    }
+    public Institucion busquedaInstitucionId(Integer id){
+        for (Institucion institucion: institucionlist) {
+            if (institucion.getIdInstitucion().equals(id)){
+                return institucion;
+            } else {
+                System.out.println("No se encontro identifacion en la lista" + id + "--" + institucion.getIdInstitucion());
+            }
+        }
+        return null;
+    }
+    public Institucion actualizarInstitucion(Integer id, Institucion body){
+        Institucion aux = busquedaInstitucionId(id);
+        try{
+            if(aux!=null){
+                if(body.getNombre()!=null){
+                    aux.setNombre(body.getNombre());
+                }
+                if(body.getDireccion()!=null){
+                    aux.setDireccion(body.getDireccion());
+                }
+                if(body.getTelefono()!=null){
+                    aux.setTelefono(body.getTelefono());
+                }
+                if(body.getEmail()!=null){
+                    aux.setEmail(body.getEmail());
+                }
+            }
+        }catch(Exception e){
+            System.out.println(e);
+        }
+        return aux;
+    }
+
+    public List<Institucion> eliminarInstitucion(Integer id_personal) {
+        List<Institucion> institucionEliminados = new ArrayList<>();
+
+        Iterator<Institucion> iterator = institucionlist.iterator();
+        while (iterator.hasNext()) {
+            Institucion institucion = iterator.next();
+            if (institucion.getIdInstitucion().equals(id_personal)){
+                institucionEliminados.add(institucion);
+                iterator.remove();
+            }
+        }
+        if (!institucionEliminados.isEmpty()) {
+            System.out.println("Se elimino la institucion");
+        } else {
+            System.out.println("No se encontro la institucion");
+        }
+        return institucionEliminados;
+    }
+
+    
 }
