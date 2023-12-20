@@ -150,6 +150,64 @@ public class Repositorio {
         }
         return institucionEliminados;
     }
+//Equipo
+    public Equipo guardarEquipo(Equipo equipo){
+        try{
+            equipolist.add(equipo);
+            return  equipo;
+        }catch (Exception e){
+            return  new Equipo();
+        }
+    }
+    public List<Equipo> listarEquipo() {
+        return equipolist;
+    }
+    public Equipo busquedaEquipoId(Integer id){
+        for (Equipo equipo: equipolist) {
+            if (equipo.getIdEquipo().equals(id)){
+                return equipo;
+            } else {
+                System.out.println("No se encontro identifacion en la lista" + id + "--" + equipo.getIdEquipo());
+            }
+        }
+        return null;
+    }
+    public Equipo actualizarEquipo(Integer id, Equipo body){
+        Equipo aux = busquedaEquipoId(id);
+        try{
+            if(aux!=null){
+                if(body.getNombre()!=null){
+                    aux.setNombre(body.getNombre());
+                }
+                if(body.getIdPersona()!=null){
+                    aux.setIdPersona(body.getIdPersona());
+                }
+            }
+        }catch(Exception e){
+            System.out.println(e);
+        }
+        return aux;
+    }
 
+    public List<Equipo> eliminarEquipo(Integer id_equipo) {
+        List<Equipo> equipoEliminados = new ArrayList<>();
+
+        Iterator<Equipo> iterator = equipolist.iterator();
+        while (iterator.hasNext()) {
+            Equipo equipo = iterator.next();
+            if (equipo.getIdEquipo().equals(id_equipo)){
+                equipoEliminados.add(equipo);
+                iterator.remove();
+            }
+        }
+        if (!equipoEliminados.isEmpty()) {
+            System.out.println("Se elimino el equipo");
+        } else {
+            System.out.println("No se encontro el equipo");
+        }
+        return equipoEliminados;
+    }
+
+    
     
 }
