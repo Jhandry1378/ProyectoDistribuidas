@@ -1,5 +1,8 @@
 package com.example.proyectou12023.Modelo;
 
+import lombok.Data;
+
+@Data
 public class Mision {
     private static int contadorId = 1;
 
@@ -7,7 +10,7 @@ public class Mision {
     private String Nombre;
     private String Descripcion;
 
-    private Integer IdEquipo;
+    private String IdEquipo;
 
     private String Estado;
 
