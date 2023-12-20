@@ -98,4 +98,22 @@ public class Servicios {
         return repositorio.eliminarResultados(id);
     }
 
+     //Tareas
+    public Tareas guardarTareas(Tareas equipo){
+        return  repositorio.guardarTareas(equipo);
+    }
+    public List<Tareas> listarTareas(){
+        return repositorio.listarTareas();
+    }
+    public Tareas busquedaTareas(Integer id){
+        return repositorio.busquedaTareasId(id);
+    }
+    public Tareas actualizarTareas(Integer id, Tareas tareas){
+        return repositorio.actualizarTareas(id, tareas);
+    }
+    public List<Tareas> eliminarTareas(Integer id){
+        return repositorio.eliminarTareas(id);
+    }
+
+
 }
