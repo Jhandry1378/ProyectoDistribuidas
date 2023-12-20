@@ -64,5 +64,20 @@ public class Servicios {
         return repositorio.eliminarEquipo(id);
     }
 
-
+    //Mision
+    public Mision guardarMision(Mision equipo){
+        return  repositorio.guardarMision(equipo);
+    }
+    public List<Mision> listarMision(){
+        return repositorio.listarMision();
+    }
+    public Mision busquedaMision(Integer id){
+        return repositorio.busquedaMisionId(id);
+    }
+    public Mision actualizarMision(Integer id, Mision mision){
+        return repositorio.actualizarMision(id, mision);
+    }
+    public List<Mision> eliminarMision(Integer id){
+        return repositorio.eliminarMision(id);
+    }
 }
