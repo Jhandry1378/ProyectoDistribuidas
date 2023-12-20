@@ -30,4 +30,21 @@ public class Servicios {
         return repositorio.eliminarPersonal(id);
     }
 
+     //Institucion
+    public Institucion guardarInstitucion(Institucion institucion){
+        return  repositorio.guardarInstitucion(institucion);
+    }
+    public List<Institucion> listarInstitucion(){
+        return repositorio.listarInstitucion();
+    }
+    public Institucion busquedaInstitucion(Integer id){
+        return repositorio.busquedaInstitucionId(id);
+    }
+    public Institucion actualizarInstitucion(Integer id, Institucion institucion){
+        return repositorio.actualizarInstitucion(id, institucion);
+    }
+    public List<Institucion> eliminarInstitucion(Integer id){
+        return repositorio.eliminarInstitucion(id);
+    }
+
 }
