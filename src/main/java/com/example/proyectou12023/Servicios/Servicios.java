@@ -6,10 +6,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-
 @Service
 public class Servicios {
-    @Autowired
+
+ @Autowired
     Repositorio repositorio;
 
     //Personal
@@ -30,7 +30,7 @@ public class Servicios {
         return repositorio.eliminarPersonal(id);
     }
 
-    //Institucion
+     //Institucion
     public Institucion guardarInstitucion(Institucion institucion){
         return  repositorio.guardarInstitucion(institucion);
     }
@@ -47,7 +47,7 @@ public class Servicios {
         return repositorio.eliminarInstitucion(id);
     }
 
-    //Equipo
+     //Equipo
     public Equipo guardarEquipo(Equipo equipo){
         return  repositorio.guardarEquipo(equipo);
     }
@@ -81,7 +81,7 @@ public class Servicios {
         return repositorio.eliminarMision(id);
     }
 
-    //Resultados
+     //Resultados
     public Resultados guardarResultados(Resultados equipo){
         return  repositorio.guardarResultados(equipo);
     }
@@ -98,8 +98,7 @@ public class Servicios {
         return repositorio.eliminarResultados(id);
     }
 
-
-    //Tareas
+     //Tareas
     public Tareas guardarTareas(Tareas equipo){
         return  repositorio.guardarTareas(equipo);
     }
@@ -115,5 +114,6 @@ public class Servicios {
     public List<Tareas> eliminarTareas(Integer id){
         return repositorio.eliminarTareas(id);
     }
+
 
 }
