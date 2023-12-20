@@ -47,4 +47,22 @@ public class Servicios {
         return repositorio.eliminarInstitucion(id);
     }
 
+     //Equipo
+    public Equipo guardarEquipo(Equipo equipo){
+        return  repositorio.guardarEquipo(equipo);
+    }
+    public List<Equipo> listarEquipo(){
+        return repositorio.listarEquipo();
+    }
+    public Equipo busquedaEquipo(Integer id){
+        return repositorio.busquedaEquipoId(id);
+    }
+    public Equipo actualizarEquipo(Integer id, Equipo equipo){
+        return repositorio.actualizarEquipo(id, equipo);
+    }
+    public List<Equipo> eliminarEquipo(Integer id){
+        return repositorio.eliminarEquipo(id);
+    }
+
+
 }
