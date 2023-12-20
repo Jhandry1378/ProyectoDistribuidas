@@ -86,8 +86,6 @@ public class Repositorio {
         return personalEliminados;
     }
 
-
-
     //Institucion
     public Institucion guardarInstitucion(Institucion institucion){
         try{
@@ -152,7 +150,6 @@ public class Repositorio {
         return institucionEliminados;
     }
 
-    //Equipo
     public Equipo guardarEquipo(Equipo equipo){
         try{
             equipolist.add(equipo);
@@ -335,7 +332,6 @@ public class Repositorio {
         return resultadosEliminados;
     }
 
-    //Tareas
     public Tareas guardarTareas(Tareas tareas){
         try{
             tareaslist.add(tareas);
@@ -392,7 +388,5 @@ public class Repositorio {
         }
         return tareasEliminados;
     }
-
-
 
 }
