@@ -272,6 +272,67 @@ public class Repositorio {
         return misionEliminados;
     }
 
- 
+    //Resultados
+    public Resultados guardarResultados(Resultados resultados){
+        try{
+            resultadoslist.add(resultados);
+            return  resultados;
+        }catch (Exception e){
+            return  new Resultados();
+        }
+    }
+    public List<Resultados> listarResultados() {
+        return resultadoslist;
+    }
+    public Resultados busquedaResultadosId(Integer id){
+        for (Resultados resultados: resultadoslist) {
+            if (resultados.getIdResultados().equals(id)){
+                return resultados;
+            } else {
+                System.out.println("No se encontro identifacion en la lista" + id + "--" + resultados.getIdResultados());
+            }
+        }
+        return null;
+    }
+    public Resultados actualizarResultados(Integer id, Resultados body){
+        Resultados aux = busquedaResultadosId(id);
+        try{
+            if(aux!=null){
+                if(body.getDescripcion()!=null){
+                    aux.setDescripcion(body.getDescripcion());
+                }
+                if(body.getEstado()!=null){
+                    aux.setEstado(body.getEstado());
+                }
+                if(body.getIdMision()!=null){
+                    aux.setIdMision(body.getIdMision());
+                }
+            }
+        }catch(Exception e){
+            System.out.println(e);
+        }
+        return aux;
+    }
+
+    public List<Resultados> eliminarResultados(Integer id_resultados) {
+        List<Resultados> resultadosEliminados = new ArrayList<>();
+
+        Iterator<Resultados> iterator = resultadoslist.iterator();
+        while (iterator.hasNext()) {
+            Resultados resultados = iterator.next();
+            if (resultados.getIdResultados().equals(id_resultados)){
+                resultadosEliminados.add(resultados);
+                iterator.remove();
+            }
+        }
+        if (!resultadosEliminados.isEmpty()) {
+            System.out.println("Se elimino el resultado");
+        } else {
+            System.out.println("No se encontro el resultado");
+        }
+        return resultadosEliminados;
+    }
+
+    
     
 }
