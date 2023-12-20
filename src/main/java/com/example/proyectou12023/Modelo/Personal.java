@@ -14,7 +14,7 @@ public class Personal {
     private Date FechaNacimiento;
     private Integer Edad;
     private String Genero;
-    private String Institucion;
+    private String IdInstitucion;
     public Personal() {
         this.IdPersonal = contadorId++;
     }
