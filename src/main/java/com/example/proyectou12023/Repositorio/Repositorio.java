@@ -333,6 +333,63 @@ public class Repositorio {
         return resultadosEliminados;
     }
 
-    
+   //Tareas
+    public Tareas guardarTareas(Tareas tareas){
+        try{
+            tareaslist.add(tareas);
+            return  tareas;
+        }catch (Exception e){
+            return  new Tareas();
+        }
+    }
+    public List<Tareas> listarTareas() {
+        return tareaslist;
+    }
+    public Tareas busquedaTareasId(Integer id){
+        for (Tareas tareas: tareaslist) {
+            if (tareas.getIdTareas().equals(id)){
+                return tareas;
+            } else {
+                System.out.println("No se encontro identifacion en la lista" + id + "--" + tareas.getIdTareas());
+            }
+        }
+        return null;
+    }
+    public Tareas actualizarTareas(Integer id, Tareas body){
+        Tareas aux = busquedaTareasId(id);
+        try{
+            if(aux!=null){
+                if(body.getDescripcion()!=null){
+                    aux.setDescripcion(body.getDescripcion());
+                }
+                if(body.getIdMision()!=null){
+                    aux.setIdMision(body.getIdMision());
+                }
+            }
+        }catch(Exception e){
+            System.out.println(e);
+        }
+        return aux;
+    }
+
+    public List<Tareas> eliminarTareas(Integer id_tareas) {
+        List<Tareas> tareasEliminados = new ArrayList<>();
+
+        Iterator<Tareas> iterator = tareaslist.iterator();
+        while (iterator.hasNext()) {
+            Tareas tareas = iterator.next();
+            if (tareas.getIdTareas().equals(id_tareas)){
+                tareasEliminados.add(tareas);
+                iterator.remove();
+            }
+        }
+        if (!tareasEliminados.isEmpty()) {
+            System.out.println("Se elimino la tarea");
+        } else {
+            System.out.println("No se encontro la tarea");
+        }
+        return tareasEliminados;
+    }
+ 
     
 }
