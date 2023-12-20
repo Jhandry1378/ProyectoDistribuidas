@@ -208,6 +208,70 @@ public class Repositorio {
         return equipoEliminados;
     }
 
-    
+    //Mision
+    public Mision guardarMision(Mision mision){
+        try{
+            misionlist.add(mision);
+            return  mision;
+        }catch (Exception e){
+            return  new Mision();
+        }
+    }
+    public List<Mision> listarMision() {
+        return misionlist;
+    }
+    public Mision busquedaMisionId(Integer id){
+        for (Mision mision: misionlist) {
+            if (mision.getIdMision().equals(id)){
+                return mision;
+            } else {
+                System.out.println("No se encontro identifacion en la lista" + id + "--" + mision.getIdMision());
+            }
+        }
+        return null;
+    }
+    public Mision actualizarMision(Integer id, Mision body){
+        Mision aux = busquedaMisionId(id);
+        try{
+            if(aux!=null){
+                if(body.getNombre()!=null){
+                    aux.setNombre(body.getNombre());
+                }
+                if(body.getDescripcion()!=null){
+                    aux.setDescripcion(body.getDescripcion());
+                }
+                if(body.getIdEquipo()!=null){
+                    aux.setIdEquipo(body.getIdEquipo());
+                }
+                if(body.getEstado()!=null){
+                    aux.setEstado(body.getEstado());
+                }
+            }
+        }catch(Exception e){
+            System.out.println(e);
+        }
+        return aux;
+    }
+
+    public List<Mision> eliminarMision(Integer id_mision) {
+        List<Mision> misionEliminados = new ArrayList<>();
+
+        Iterator<Mision> iterator = misionlist.iterator();
+        while (iterator.hasNext()) {
+            Mision equipo = iterator.next();
+            if (equipo.getIdEquipo().equals(id_mision)){
+                misionEliminados.add(equipo);
+                iterator.remove();
+            }
+        }
+        if (!misionEliminados.isEmpty()) {
+            System.out.println("Se elimino la mision");
+        } else {
+            System.out.println("No se encontro la mision");
+        }
+        return misionEliminados;
+    }
+
+   
     
 }
