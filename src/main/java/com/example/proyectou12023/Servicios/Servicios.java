@@ -80,4 +80,22 @@ public class Servicios {
     public List<Mision> eliminarMision(Integer id){
         return repositorio.eliminarMision(id);
     }
+
+     //Resultados
+    public Resultados guardarResultados(Resultados equipo){
+        return  repositorio.guardarResultados(equipo);
+    }
+    public List<Resultados> listarResultados(){
+        return repositorio.listarResultados();
+    }
+    public Resultados busquedaResultados(Integer id){
+        return repositorio.busquedaResultadosId(id);
+    }
+    public Resultados actualizarResultados(Integer id, Resultados resultados){
+        return repositorio.actualizarResultados(id, resultados);
+    }
+    public List<Resultados> eliminarResultados(Integer id){
+        return repositorio.eliminarResultados(id);
+    }
+
 }
